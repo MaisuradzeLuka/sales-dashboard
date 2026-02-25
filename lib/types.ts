@@ -8,3 +8,5 @@ export type SalesByYear = {
   year: number;
   data: SalesDataPoint[];
 };
+
+export type ChartType = "bar" | "pie" | "line";

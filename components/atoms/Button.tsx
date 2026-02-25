@@ -15,13 +15,13 @@ const variants: Record<ButtonVariant, string> = {
     "border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-50 focus:ring-emerald-500",
 };
 
-export function Button({
+export const Button = ({
   variant = "primary",
   active,
   className = "",
   children,
   ...props
-}: ButtonProps) {
+}: ButtonProps) => {
   const base =
     "inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50";
   const v = variants[variant];
@@ -36,4 +36,4 @@ export function Button({
       {children}
     </button>
   );
-}
+};

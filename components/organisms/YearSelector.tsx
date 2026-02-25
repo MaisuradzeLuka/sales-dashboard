@@ -9,7 +9,7 @@ type YearSelectorProps = {
   onSelect: (year: number) => void;
 };
 
-export function YearSelector({ selectedYear, onSelect }: YearSelectorProps) {
+export const YearSelector = ({ selectedYear, onSelect }: YearSelectorProps) => {
   return (
     <div className="flex flex-wrap gap-2" role="group" aria-label="Select year">
       {YEARS.map((year) => (
@@ -25,4 +25,4 @@ export function YearSelector({ selectedYear, onSelect }: YearSelectorProps) {
       ))}
     </div>
   );
-}
+};

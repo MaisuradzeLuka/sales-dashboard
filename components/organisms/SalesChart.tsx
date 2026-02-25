@@ -1,17 +1,27 @@
 "use client";
 
-import { ResponsiveContainer } from "recharts";
-import type { SalesDataPoint } from "@/lib/types";
+import type { ChartType, SalesDataPoint } from "@/lib/types";
 import BarChartComponent from "../molecules/BarChartComponent";
+import LineChartComponent from "../molecules/LineChartComponent";
+import PieChartComponent from "../molecules/PieChartComponent";
 
 type SalesChartProps = {
   data: SalesDataPoint[];
+  chartType: ChartType;
 };
 
-export function SalesChart({ data }: SalesChartProps) {
-  return (
-    <ResponsiveContainer width="100%" height={320}>
-      <BarChartComponent data={data} />
-    </ResponsiveContainer>
-  );
-}
+export const SalesChart = ({ data, chartType }: SalesChartProps) => {
+  switch (chartType) {
+    case "bar":
+      return <BarChartComponent data={data} />;
+
+    case "line":
+      return <LineChartComponent data={data} />;
+
+    case "pie":
+      return <PieChartComponent data={data} />;
+
+    default:
+      return null;
+  }
+};
